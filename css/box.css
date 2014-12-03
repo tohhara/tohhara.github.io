@@ -15,7 +15,7 @@ scrawl
 
 .scrawl {
   border:solid 5px #999;
-  width:500px;
+  width:auto;
   margin:25px auto;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   padding:10px;
