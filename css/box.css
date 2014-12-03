@@ -1,11 +1,82 @@
 @charset "utf-8";
 /* *****************************************************
 Contents ---------------
-01:margin
-02:float
-03:width
+backbox
+margin
+float
+width
 ------------------------
 ***************************************************** */
+
+
+
+/* *****************************************************
+backbox
+***************************************************** */
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab);
+
+html {
+ background-color: #E64C45; 
+}
+
+@mixin prettytext(){
+  font-family: "Josefin Slab";
+  text-transform: uppercase;
+  font-size: rems(48px);
+  color: white;
+}
+
+@mixin basicformatting() {
+  @include prettytext;
+  width: 75%;
+  position: relative;
+  left: 12.5%;
+  top: rems(48px);
+  text-align: center;
+  padding: rems(1px);
+}
+
+/* The following is all you really need for the effect to work */
+
+@function rems($px) {
+  @return $px / 16px * 1rem;
+}
+
+@mixin left-gradient($baseopacity: 0, $factor: 0.3) {
+  @include background-image(linear-gradient(left, rgba(255,255,255, $baseopacity), rgba(255,255,255, $baseopacity + $factor) 40%, rgba(255,255,255, $baseopacity + $factor) 60%, rgba(255,255,255,$baseopacity)));
+}
+
+@mixin fadient(){
+  position: relative;
+  @include left-gradient;
+  
+  &:before {
+    width: 100%;
+    height: rems(2px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    @include left-gradient(0.0, 0.8);
+  }
+  
+  &:after {
+    width: 100%;
+    height: rems(2px);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    @include left-gradient(0.0, 0.8);
+  }    
+}
+
+.backbox {
+  @include basicformatting;
+  @include fadient;
+}
+
 
 
 /* *****************************************************
