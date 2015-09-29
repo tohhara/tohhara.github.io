@@ -22,8 +22,61 @@ body {
   /* 14px */
   line-height: 158%;
   /* 22px */
-  font-family: "Helvetica Neue", Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   color: #555565;
   word-wrap: break-word;
   word-break: break-word;
 }
+
+.body {
+  position: relative;
+  width: 960px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.body .skin .base {
+  position: fixed;
+  top: 0px;
+  z-index: 0;
+}
+
+.body .skin .makeup {
+  position: fixed;
+  z-index: 20;
+  margin-top: 20px;
+}
+
+.body .foot {
+  position: relative;
+  margin: 0 0 20px 0;
+  border-top: 1px solid #333;
+}
+
+.body .foot .footer-navi ul {
+  font-size: 0;
+}
+
+.body .foot .footer-navi li {
+  font-size: 12px;
+  display: inline-block;
+  margin: 10px 20px 0 0;
+}
+
+.body .subcutaneous2 {
+  position: fixed;
+  top: 0px;
+  z-index: 20;
+}
+
+.body .subcutaneous2 p {
+  position: relative;
+  margin: 1000px 0 500px 100px;
+  
+}
+
+
+
+
+
+
